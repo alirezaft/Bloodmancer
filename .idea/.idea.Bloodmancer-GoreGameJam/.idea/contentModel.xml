@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\User\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\User\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Bloodmancer-GoreGameJam.-1158499890.00" t="ExcludeRecursive" />
+    <e p="E:\Projects\Unity\Bloodmancer-GoreGameJam" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Killer" t="Include">
+            <e p="KillerControl.cs" t="Include" />
+          </e>
+          <e p="Protagonist" t="Include">
+            <e p="BloodPick.cs" t="Include" />
+            <e p="ColectBlood.cs" t="Include" />
+            <e p="ProtControl.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Bloodmancer-GoreGameJam.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
