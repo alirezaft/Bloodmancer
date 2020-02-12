@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Blood
   - Killer
+  - Ground
+  - BloodSpear
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - 
   - Player
   - NoColWPlayer
-  - 
-  - 
+  - Liquid
+  - Spear
   - 
   - 
   - 

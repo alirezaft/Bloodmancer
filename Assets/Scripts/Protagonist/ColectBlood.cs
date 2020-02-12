@@ -14,6 +14,8 @@ public class ColectBlood : MonoBehaviour
         {
             print("BLOOD!");
 //            bloodPick.Bloods.Add(other.gameObject);
+            Blood.Bloods[Blood.Bloods.IndexOf(other.gameObject)].GetComponent<Blood>().Active = true;
+            other.gameObject.layer = LayerMask.NameToLayer("Spear");
         }
     }
 
@@ -33,5 +35,10 @@ public class ColectBlood : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnDestroy()
+    {
+        print(bloodPick.Bloods.Count);
     }
 }

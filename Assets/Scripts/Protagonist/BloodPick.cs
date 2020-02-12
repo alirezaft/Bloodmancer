@@ -8,7 +8,7 @@ using Random = System.Random;
 
 public class BloodPick : MonoBehaviour
 {
-    private List<GameObject> Bloods;
+    public List<GameObject> Bloods;
     [SerializeField] private GameObject Picker;
     private GameObject CurrPicker;
     private bool Dragging = false;
@@ -37,7 +37,8 @@ public class BloodPick : MonoBehaviour
         {
             Dragging = true;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            print(ray.GetPoint(0));
+            var mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
+//            print(ray.GetPoint(0));
             RaycastHit hit;
             if (Physics.Raycast(ray,out hit))
             {
@@ -47,7 +48,8 @@ public class BloodPick : MonoBehaviour
                     Bloods.Add(hit.collider.gameObject);   
                 }
             }
-            CurrPicker = Instantiate(Picker);
+            CurrPicker = Instantiate(Picker, new Vector3(mousepos.x, mousepos.y, 0f), new Quaternion(0f, 0f, 0f, 0f));
+            Debug.Break();
         }
 
         if (Dragging)
@@ -56,7 +58,7 @@ public class BloodPick : MonoBehaviour
             var mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             foreach (GameObject obj in Bloods)
             {
-                var xofs = obj.transform.position.x - mousepos.x;
+                var xofs = obj.transform.position.x - mousepos.x;    
                 var yofs = obj.transform.position.y - mousepos.y;
                 print(xofs + ", " + yofs);
             
@@ -69,6 +71,7 @@ public class BloodPick : MonoBehaviour
             Dragging = false;
             Bloods.Clear();
 //            Destroy(CurrPicker);
+            Blood.DeactivateAll();
         }
     }
 }
