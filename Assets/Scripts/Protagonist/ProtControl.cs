@@ -11,6 +11,8 @@ public class ProtControl : MonoBehaviour
     public bool Hitting = true;
     private Animator anim;
     private bool Jump = false;
+
+    public static bool Left = false;
     
     private SpriteRenderer sr;
     // Start is called before the first frame update
@@ -25,12 +27,14 @@ public class ProtControl : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
+            Left = false;
             anim.enabled = true;
             sr.flipX = false;
             transform.position = new Vector3(transform.position.x +  SPEED * Time.fixedDeltaTime, transform.position.y, 0f);
             anim.Play("Walk");
         }else if (Input.GetKey(KeyCode.A))
         {
+            Left = true;
             anim.enabled = true;
             anim.Play("Walk");
             sr.flipX = true;
@@ -42,7 +46,7 @@ public class ProtControl : MonoBehaviour
             Jump = true;
         }else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
-            anim.enabled = false;
+            anim.Play("Idle");
         }
     }
 

@@ -8,6 +8,7 @@ TagManager:
   - Killer
   - Ground
   - BloodSpear
+  - Spear
   layers:
   - Default
   - TransparentFX

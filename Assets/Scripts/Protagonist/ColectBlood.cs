@@ -7,7 +7,7 @@ public class ColectBlood : MonoBehaviour
 {
     [SerializeField]private GameObject BloodPicker;
     private BloodPick bloodPick;
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         
         if (other.tag.Equals("Blood"))
@@ -16,6 +16,7 @@ public class ColectBlood : MonoBehaviour
 //            bloodPick.Bloods.Add(other.gameObject);
             Blood.Bloods[Blood.Bloods.IndexOf(other.gameObject)].GetComponent<Blood>().Active = true;
             other.gameObject.layer = LayerMask.NameToLayer("Spear");
+            other.gameObject.GetComponent<Blood>().GenRandomPosition();
         }
     }
 

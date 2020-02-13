@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class KillerControl : MonoBehaviour
 {
-    private readonly float SPEED = 5f;
+    private readonly float SPEED = 2f;
     private readonly float NEAR_THRESH = 0.7f;
     private float Wounded = 0f;
     private float blood = 100f;

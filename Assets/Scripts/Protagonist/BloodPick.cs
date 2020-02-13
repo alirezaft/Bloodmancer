@@ -45,11 +45,11 @@ public class BloodPick : MonoBehaviour
                 print("Got it!");
                 if (hit.collider.tag.Equals("Blood"))
                 {
-                    Bloods.Add(hit.collider.gameObject);   
+                    Bloods.Add(hit.collider.gameObject);
                 }
             }
             CurrPicker = Instantiate(Picker, new Vector3(mousepos.x, mousepos.y, 0f), new Quaternion(0f, 0f, 0f, 0f));
-            Debug.Break();
+//            Debug.Break();
         }
 
         if (Dragging)
@@ -70,6 +70,7 @@ public class BloodPick : MonoBehaviour
         {
             Dragging = false;
             Bloods.Clear();
+            Blood.ShootBlood();
 //            Destroy(CurrPicker);
             Blood.DeactivateAll();
         }
