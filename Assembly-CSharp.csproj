@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Protagonist\BloodPick.cs" />
      <Compile Include="Assets\Scripts\Protagonist\ColectBlood.cs" />
      <Compile Include="Assets\Scripts\Protagonist\ProtControl.cs" />
+     <Compile Include="Assets\Scripts\SplatterDecay.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>E:/Projects/Unity/Bloodmancer-GoreGameJam/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

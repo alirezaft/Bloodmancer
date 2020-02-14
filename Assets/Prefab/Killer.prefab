@@ -46,7 +46,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -9596,6 +9596,8 @@ GameObject:
   - component: {fileID: 194122908}
   - component: {fileID: 194122907}
   - component: {fileID: 11815053128827222}
+  - component: {fileID: 1513593808}
+  - component: {fileID: 1513593807}
   m_Layer: 9
   m_Name: Killer
   m_TagString: Killer
@@ -9685,6 +9687,11 @@ MonoBehaviour:
   BloodFountain: {fileID: 3480880837260984143}
   BloodPlace: {fileID: 0}
   Blood: {fileID: 4940940503679807775, guid: 1fd2081f26cddf6489d6169419a1f9dd, type: 3}
+  BloodSplatter:
+  - {fileID: 7947669400630470532, guid: 7fad477e9630e9b46967060724421f03, type: 3}
+  - {fileID: 8934701152425801929, guid: c22336912158a6c428e9b8dac4b979db, type: 3}
+  - {fileID: 4923764506253563326, guid: e050511f951e5a048b04331da72c4d63, type: 3}
+  - {fileID: 6624494089419821949, guid: e4fd7caad6c6790489913967b01abd09, type: 3}
 --- !u!50 &194122908
 Rigidbody2D:
   serializedVersion: 4
@@ -9748,3 +9755,37 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 4.1800003, y: 7.3815947}
   m_Direction: 0
+--- !u!111 &1513593808
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9209716774446526371}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 96d7ce7063d02bf4ab48599a287cc540, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &1513593807
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9209716774446526371}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37f8bd49d9454484a87bde0e9cb21480, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

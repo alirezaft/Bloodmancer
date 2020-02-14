@@ -19,6 +19,8 @@ public class KillerControl : MonoBehaviour
     [SerializeField] private ParticleSystem BloodFountain;
     [SerializeField] private Transform BloodPlace;
     [SerializeField] private GameObject Blood;
+    [SerializeField] private GameObject[] BloodSplatter;
+
     private GameObject Bloodmancer;
     private Transform BMTransform;
 
@@ -47,7 +49,7 @@ public class KillerControl : MonoBehaviour
         {
             sr.flipX = true;
 //            print("BACKWARD");
-            transform.position = new Vector3(transform.position.x - (SPEED * Time.deltaTime), 0f, 0f);
+            transform.position = new Vector3(transform.position.x - (SPEED * Time.deltaTime), transform.position.y, 0f);
         }
 
         if (Mathf.Abs(diff.x) <= NEAR_THRESH)
@@ -80,9 +82,25 @@ public class KillerControl : MonoBehaviour
             StartCoroutine(Dewound());
             print(Wounded);
             StartCoroutine(BloodDrop((int)Wounded));
+        }else if (other.gameObject.layer == LayerMask.NameToLayer("Spear"))
+        {
+            Instantiate(BloodSplatter[Random.Range(0, 4)], new Vector3(transform.position.x, transform.position.y, 0), 
+                new Quaternion(0,0,0,0));
+            BloodFountain.Play();
         }
+    }
 
-
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag.Equals("Player") && other.gameObject.GetComponent<ProtControl>().Hitting)
+        {
+            print("WOUNDED");
+            Wounded = Random.Range(5f, 15f);
+            BloodPunch.Play();
+            StartCoroutine(Dewound());
+            print(Wounded);
+            StartCoroutine(BloodDrop((int)Wounded));
+        }
     }
 
     IEnumerator Dewound()

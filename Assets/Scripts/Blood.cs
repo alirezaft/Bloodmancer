@@ -13,7 +13,7 @@ public class Blood : MonoBehaviour
     private bool Grounded = false;
 
     private float rany;
-    private float ranx; 
+    private float ranx;
     
     // Start is called before the first frame update
     void Start()
@@ -53,6 +53,11 @@ public class Blood : MonoBehaviour
         }
        
        
+    }
+
+    private void OnEnable()
+    {
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-0.5f, 0.5f), 0f), ForceMode2D.Impulse);
     }
 
     public static void DeactivateAll()

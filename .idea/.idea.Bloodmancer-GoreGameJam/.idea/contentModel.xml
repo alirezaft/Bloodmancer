@@ -16,6 +16,7 @@
             <e p="ColectBlood.cs" t="Include" />
             <e p="ProtControl.cs" t="Include" />
           </e>
+          <e p="SplatterDecay.cs" t="Include" />
         </e>
       </e>
       <e p="Bloodmancer-GoreGameJam.sln" t="IncludeFlat" />

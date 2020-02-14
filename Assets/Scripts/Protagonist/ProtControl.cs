@@ -8,7 +8,7 @@ public class ProtControl : MonoBehaviour
     readonly float SPEED = 4f;
     private float Health = 100;
     private float Wounded = 0;
-    public bool Hitting = true;
+    public bool Hitting = false;
     private Animator anim;
     private bool Jump = false;
 
@@ -48,6 +48,12 @@ public class ProtControl : MonoBehaviour
         {
             anim.Play("Idle");
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Hitting = true;
+            anim.Play("Stab");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -56,5 +62,10 @@ public class ProtControl : MonoBehaviour
         {
             Jump = false;
         }
+    }
+
+    public void Dehit()
+    {
+        Hitting = false;
     }
 }

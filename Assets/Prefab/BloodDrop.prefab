@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4940940503679807771}
   - component: {fileID: 4940940503679807768}
   - component: {fileID: 7215560548937258446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BloodDrop
   m_TagString: Blood
   m_Icon: {fileID: 0}

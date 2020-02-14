@@ -33,7 +33,7 @@ public class BloodPick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !Dragging)
+        if (Input.GetMouseButtonDown(1) && !Dragging)
         {
             Dragging = true;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -66,7 +66,7 @@ public class BloodPick : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonUp(0) && Dragging)
+        if (Input.GetMouseButtonUp(1) && Dragging)
         {
             Dragging = false;
             Bloods.Clear();
